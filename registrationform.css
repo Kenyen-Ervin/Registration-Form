@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+
+html{
+    display: flex;
+    background-image:linear-gradient(to bottom right,rgb(98, 98, 240), rgb(120, 120, 231) 25%, lightblue);
+    background-repeat: no-repeat;
+    background-size: 500vw 60vw;
+    justify-content: center;
+    align-items: center;
+}
+
+.form{
+    display: flex;
+    justify-content: center;
+    width: 75vw;
+    height: 45vw;
+    border: 0.65vw solid darkgray;
+    border-radius: 10vw;
+    background-image: linear-gradient(to bottom,gray 25%, lightgray);
+    font-size: 2.5em;
+    font-family: "Roboto Condensed";
+}
