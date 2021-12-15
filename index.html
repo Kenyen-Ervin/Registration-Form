@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+
+html{
+    display: flex;
+    background-image:linear-gradient(to bottom right,rgb(98, 98, 240), rgb(120, 120, 231) 25%, lightblue);
+    background-repeat: no-repeat;
+    background-size: 500vw 60vw;
+    justify-content: center;
+    align-items: center;
+}
+
+.form{
+    display: flex;
+    justify-content: center;
+    width: 75vw;
+    height: 45vw;
+    border: 0.65vw solid darkgray;
+    border-radius: 10vw;
+    background-image: linear-gradient(to bottom,gray 25%, lightgray);
+    font-size: 2.5em;
+    font-family: "Roboto Condensed";
+}
+</style>
+<script>
+    function validation()
+{
+	var firstname=document.registration.fname;
+	var lname=document.registration.lname;
+	var gname=document.registration.gname;
+	var number=document.registration.number;
+
+	if(allLettername(firstname))
+	{
+		if(allLetterlast(lname))
+		{
+			if(genderselect(gname))
+			{
+				if(Mobile(number))
+					{
+					}
+			}
+		}
+	}
+	return false;
+}	
+
+function allLettername(firstname)
+{ 
+	var letters = /^[A-Za-z]+$/;
+	if(firstname.value.length==0)
+	{
+		alert('Please enter first name');
+		firstname.focus();
+		return false;
+	}
+
+	else if(firstname.value.match(letters))
+	{
+		return true;
+		
+	}
+	else
+	{
+		alert('First name must have alphabet characters only');
+		firstname.focus();
+		return false;
+	}
+}
+
+function allLetterlast(lname)
+{ 
+	var letters = /^[A-Za-z]+$/;
+	if(lname.value.length==0)
+	{
+		alert('Please enter last name');
+		fname.focus();
+		return false;
+	}
+	else if(lname.value.match(letters))
+	{
+		return true;
+		
+	}
+	else
+	{
+		alert('last name must have alphabet characters only');
+		fname.focus();
+		return false;
+		
+	}
+}
+
+function genderselect(gname)
+{
+	if(gname.value == "Default")
+	{
+		alert('Select your gender');
+		gname.focus();
+		return false;
+	}
+	else
+	{
+		return true;
+	}
+}
+
+function Mobile(number)
+{ 
+	var numbers = /^[0-9]+$/;
+	if(number.value.length==0 )
+	{
+		alert('Please enter contact number');
+		fname.focus();
+		return false;
+	}
+	else if(number.value.length>10)
+	{
+		alert('Please enter a valid contact number');
+		fname.focus();
+		return false;
+
+	}
+	else if(number.value.match(numbers))
+	{
+		alert('Form Succesfully Submitted');
+		window.location.reload();
+		return true;
+	}
+	else
+	{
+		alert('Please check your contact number');
+		return false;
+	}
+}
+</script>
+<body>
+    <div class="form">
+        <form  name="registration" onSubmit="return validation();">
+            <h1>Register Here</h1>
+        <label>First Name:</label>
+        </br>
+        <input type="text" placeholder="First Name" name="fname"></input>
+        </br>
+
+        <label>Last Name:</label>
+        </br>
+        <input type="text" placeholder="Last Name" name="lname"></input>
+        </br>
+
+        <label>Contact Number</label>
+        </br>
+        <input type="text" placeholder="Mobile Number" name="number"></input>
+        <br>
+
+        <label>Gender</label>
+        </br>
+        <select name="gname">
+        <option selected="" value="Default">Select</option>
+        <option>Male</option>
+        <OPTION>Female</OPTION></select>
+        </br>
+
+        <input type="submit" value="Submit" name="Submit"></input>
+    </form>
+    </div>
+    </div>
+</body>
+</html>
